@@ -131,7 +131,9 @@ const ContactSection = () => {
           <p className="text-muted-foreground mb-4">সোশ্যাল মিডিয়ায় আমাদের ফলো করুন</p>
           <div className="flex justify-center gap-4">
             <a
-              href="#"
+              href="https://www.facebook.com/share/1BqdX23h2w/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-12 h-12 bg-card rounded-full flex items-center justify-center shadow-soft hover:shadow-card hover:-translate-y-1 transition-all duration-300"
               aria-label="Facebook"
             >
