@@ -1,5 +1,5 @@
 import clothesImage from '@/assets/winter-clothes-distribution.jpg';
-import ramadanImage from '@/assets/ramadan-iftar.jpg';
+import ramadanImage from '@/assets/eid-gift-distribution.jpg';
 import communityImage from '@/assets/community-help.jpg';
 
 const activities = [
@@ -10,10 +10,10 @@ const activities = [
     stats: '৫০০+ পরিবার সাহায্যপ্রাপ্ত',
   },
   {
-    title: 'রমজান ইফতার কার্যক্রম',
-    description: 'পবিত্র রমজান মাসে আমরা রোজাদারদের জন্য ইফতার সামগ্রী বিতরণ করি। মসজিদে মসজিদে, গ্রামে গ্রামে পৌঁছে যাই আমরা।',
+    title: 'ঈদ উপহার সামগ্রী বিতরণ',
+    description: 'পবিত্র ঈদুল ফিতর ও ঈদুল আজহায় আমরা অসহায় পরিবারগুলোকে ঈদ উপহার সামগ্রী বিতরণ করি। সবার মুখে হাসি ফোটানোই আমাদের লক্ষ্য।',
     image: ramadanImage,
-    stats: '১০০০+ ইফতার বিতরণ',
+    stats: '১০০০+ উপহার বিতরণ',
   },
   {
     title: 'জরুরি সহায়তা',
