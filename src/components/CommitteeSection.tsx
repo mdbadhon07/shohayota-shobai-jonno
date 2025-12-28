@@ -23,7 +23,7 @@ const committeeMembers = [
     name: 'মো: আব্দুল হান্নান',
     position: 'কোষাধ্যক্ষ',
     image: treasurerImage,
-    phone: '01XXXXXXXXX',
+    phone: '01306219560',
     facebook: 'https://facebook.com/',
   },
   {
