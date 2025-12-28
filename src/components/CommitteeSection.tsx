@@ -1,4 +1,4 @@
-import { User, Phone, Facebook } from 'lucide-react';
+import { User, Phone, Facebook, MessageCircle } from 'lucide-react';
 import presidentImage from '@/assets/president-al-amin-raju.jpg';
 import generalSecretaryImage from '@/assets/general-secretary-rakibul.jpg';
 import publicitySecretaryImage from '@/assets/publicity-secretary-momin.jpg';
@@ -81,6 +81,15 @@ const CommitteeSection = () => {
                   title="ফোন করুন"
                 >
                   <Phone className="w-4 h-4" />
+                </a>
+                <a
+                  href={`https://wa.me/${member.phone.replace(/^0/, '880')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-green-500 hover:text-white transition-colors"
+                  title="হোয়াটসঅ্যাপ"
+                >
+                  <MessageCircle className="w-4 h-4" />
                 </a>
                 <a
                   href={member.facebook}
