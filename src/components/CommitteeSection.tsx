@@ -31,7 +31,7 @@ const committeeMembers = [
     position: 'প্রচার সম্পাদক',
     image: publicitySecretaryImage,
     phone: '01XXXXXXXXX',
-    facebook: 'https://facebook.com/',
+    facebook: 'https://www.facebook.com/share/1AaiR164Wm/',
   },
 ];
 
