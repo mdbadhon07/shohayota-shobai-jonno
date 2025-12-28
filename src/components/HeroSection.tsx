@@ -1,5 +1,5 @@
 import { Heart, Users, HandHeart } from 'lucide-react';
-import heroImage from '@/assets/hero-volunteers.jpg';
+import heroImage from '@/assets/team-photo.jpg';
 
 const HeroSection = () => {
   return (
