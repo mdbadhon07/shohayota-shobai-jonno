@@ -161,9 +161,9 @@ const ActivitiesSection = () => {
 
       {/* Gallery Modal */}
       <Dialog open={!!selectedActivity} onOpenChange={closeGallery}>
-        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-background/95 backdrop-blur-sm">
+        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-background/95 backdrop-blur-sm max-h-[90vh]">
           <DialogHeader className="p-4 pb-0">
-            <DialogTitle className="text-xl font-semibold text-foreground">
+            <DialogTitle className="text-lg md:text-xl font-semibold text-foreground text-center pr-8">
               {selectedActivity?.title}
             </DialogTitle>
           </DialogHeader>
