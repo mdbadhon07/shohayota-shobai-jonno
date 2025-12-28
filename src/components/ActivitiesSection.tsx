@@ -1,6 +1,6 @@
 import clothesImage from '@/assets/winter-clothes-distribution.jpg';
 import ramadanImage from '@/assets/eid-gift-distribution.jpg';
-import communityImage from '@/assets/community-help.jpg';
+import communityImage from '@/assets/social-service.jpg';
 
 const activities = [
   {
@@ -16,10 +16,10 @@ const activities = [
     stats: '১০০০+ উপহার বিতরণ',
   },
   {
-    title: 'জরুরি সহায়তা',
-    description: 'বন্যা, দুর্যোগ বা যেকোনো জরুরি পরিস্থিতিতে আমরা দ্রুত সাড়া দিই। খাদ্য, ওষুধ এবং প্রয়োজনীয় সামগ্রী নিয়ে পৌঁছে যাই আক্রান্ত এলাকায়।',
+    title: 'অন্যান্য সমাজসেবা মূলক কার্যক্রম',
+    description: 'পুকুর পরিষ্কার, রাস্তা মেরামত, বৃক্ষরোপণ এবং পরিবেশ সংরক্ষণসহ বিভিন্ন সমাজসেবামূলক কাজে আমরা সদা তৎপর।',
     image: communityImage,
-    stats: '২০+ জরুরি অভিযান',
+    stats: '২০+ সেবামূলক অভিযান',
   },
 ];
 
