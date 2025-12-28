@@ -9,8 +9,8 @@ const committeeMembers = [
     name: 'মো: আল আমিন রাজু',
     position: 'সভাপতি',
     image: presidentImage,
-    phone: '01XXXXXXXXX',
-    facebook: 'https://facebook.com/',
+    phone: '01774003680',
+    facebook: 'https://www.facebook.com/share/1KYiYANS7q/',
   },
   {
     name: 'মো: রাকিবুল ইসলাম',
