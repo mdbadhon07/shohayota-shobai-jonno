@@ -1,5 +1,6 @@
 import { User } from 'lucide-react';
 import presidentImage from '@/assets/president-al-amin-raju.jpg';
+import generalSecretaryImage from '@/assets/general-secretary-rakibul.jpg';
 
 const committeeMembers = [
   {
@@ -13,9 +14,9 @@ const committeeMembers = [
     image: null,
   },
   {
-    name: 'সদস্যের নাম',
+    name: 'মো: রাকিবুল ইসলাম',
     position: 'সাধারণ সম্পাদক',
-    image: null,
+    image: generalSecretaryImage,
   },
   {
     name: 'সদস্যের নাম',
