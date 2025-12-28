@@ -15,6 +15,10 @@ import socialServiceImage from '@/assets/social-service.jpg';
 import meetingGathering from '@/assets/meeting-gathering.jpg';
 import teamPhoto from '@/assets/team-photo.jpg';
 
+import bloodDonation1 from '@/assets/blood-donation-1.jpg';
+import bloodDonation2 from '@/assets/blood-donation-2.jpg';
+import bloodDonation3 from '@/assets/blood-donation-3.jpg';
+
 const activities = [
   {
     title: 'শীতবস্ত্র বিতরণ',
@@ -48,6 +52,17 @@ const activities = [
       { src: socialServiceImage, caption: 'পুকুর পরিষ্কার' },
       { src: meetingGathering, caption: 'সভা ও আলোচনা' },
       { src: teamPhoto, caption: 'আমাদের দল' },
+    ],
+  },
+  {
+    title: 'রক্তদান কার্যক্রম',
+    description: 'জরুরি প্রয়োজনে রক্তদান করে আমরা মানুষের জীবন বাঁচাতে সাহায্য করি। আমাদের সদস্যরা নিয়মিত স্বেচ্ছায় রক্তদান করে থাকেন।',
+    image: bloodDonation1,
+    stats: '৫০+ রক্তদান',
+    gallery: [
+      { src: bloodDonation1, caption: 'রক্তদান - ১' },
+      { src: bloodDonation2, caption: 'রক্তদান - ২' },
+      { src: bloodDonation3, caption: 'রক্তদান - ৩' },
     ],
   },
 ];
@@ -95,7 +110,7 @@ const ActivitiesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {activities.map((activity, index) => (
             <div
               key={activity.title}
