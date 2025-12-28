@@ -64,8 +64,17 @@ const HelpSection = () => {
                   {option.description}
                 </p>
                 
-                <a
-                  href="#contact"
+                <button
+                  onClick={() => {
+                    const donationSection = document.getElementById('donation-info');
+                    if (donationSection) {
+                      donationSection.scrollIntoView({ behavior: 'smooth' });
+                      donationSection.classList.add('ring-2', 'ring-primary', 'ring-offset-2');
+                      setTimeout(() => {
+                        donationSection.classList.remove('ring-2', 'ring-primary', 'ring-offset-2');
+                      }, 2000);
+                    }
+                  }}
                   className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:gap-3 ${
                     option.color === 'primary' ? 'bg-primary text-primary-foreground hover:bg-primary/90' :
                     option.color === 'secondary' ? 'bg-secondary text-secondary-foreground hover:bg-secondary/90' :
@@ -74,14 +83,14 @@ const HelpSection = () => {
                 >
                   {option.action}
                   <ArrowRight size={16} />
-                </a>
+                </button>
               </div>
             );
           })}
         </div>
 
         {/* Donation Info */}
-        <div className="mt-12 md:mt-16 bg-muted/50 rounded-2xl p-8 md:p-10">
+        <div id="donation-info" className="mt-12 md:mt-16 bg-muted/50 rounded-2xl p-8 md:p-10 transition-all duration-300">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="text-xl font-semibold text-foreground mb-4">
               কীভাবে দান করবেন?
