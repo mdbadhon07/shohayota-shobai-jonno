@@ -12,6 +12,8 @@ import foodPackage from '@/assets/food-package.jpg';
 import communityGathering from '@/assets/community-gathering.jpg';
 
 import socialServiceImage from '@/assets/social-service.jpg';
+import treePlanting1 from '@/assets/tree-planting-1.jpg';
+import treePlanting2 from '@/assets/tree-planting-2.jpg';
 import socialService1 from '@/assets/social-service-1.jpg';
 import socialService2 from '@/assets/social-service-2.jpg';
 import socialService3 from '@/assets/social-service-3.jpg';
@@ -54,6 +56,8 @@ const activities = [
     stats: '২০+ সেবামূলক অভিযান',
     gallery: [
       { src: socialServiceImage, caption: 'পুকুর পরিষ্কার' },
+      { src: treePlanting1, caption: 'বৃক্ষরোপণ - ১' },
+      { src: treePlanting2, caption: 'বৃক্ষরোপণ - ২' },
       { src: socialService1, caption: 'শরবত বিতরণ - ১' },
       { src: socialService2, caption: 'শরবত বিতরণ - ২' },
       { src: socialService3, caption: 'শরবত বিতরণ - ৩' },
