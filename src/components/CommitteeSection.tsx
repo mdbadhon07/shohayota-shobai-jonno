@@ -11,19 +11,9 @@ const committeeMembers = [
     image: presidentImage,
   },
   {
-    name: 'সদস্যের নাম',
-    position: 'সহ-সভাপতি',
-    image: null,
-  },
-  {
     name: 'মো: রাকিবুল ইসলাম',
     position: 'সাধারণ সম্পাদক',
     image: generalSecretaryImage,
-  },
-  {
-    name: 'সদস্যের নাম',
-    position: 'সেক্রেটারি',
-    image: null,
   },
   {
     name: 'মো: আব্দুল হান্নান',
