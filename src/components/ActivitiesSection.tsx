@@ -1,4 +1,4 @@
-import clothesImage from '@/assets/clothes-distribution.jpg';
+import clothesImage from '@/assets/winter-clothes-distribution.jpg';
 import ramadanImage from '@/assets/ramadan-iftar.jpg';
 import communityImage from '@/assets/community-help.jpg';
 
