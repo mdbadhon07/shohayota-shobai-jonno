@@ -16,8 +16,8 @@ const committeeMembers = [
     name: 'মো: রাকিবুল ইসলাম',
     position: 'সাধারণ সম্পাদক',
     image: generalSecretaryImage,
-    phone: '01XXXXXXXXX',
-    facebook: 'https://facebook.com/',
+    phone: '01740328654',
+    facebook: 'https://www.facebook.com/share/14QTFYNyy94/',
   },
   {
     name: 'মো: আব্দুল হান্নান',
