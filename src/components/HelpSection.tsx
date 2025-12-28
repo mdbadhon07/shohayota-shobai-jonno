@@ -14,6 +14,7 @@ const helpOptions = [
     description: 'প্রতি মাসে সামান্য অবদান রেখে আমাদের পরিবারের অংশ হয়ে যান। নিয়মিত সাহায্য আমাদের কাজ সচল রাখে।',
     action: 'সদস্য হন',
     color: 'secondary',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSfHt01gq6Hlh7KEwLQk2-Qq6Tnk4RP1HEMPB-QXhhpBo3tF3A/viewform',
   },
   {
     icon: HandHelping,
