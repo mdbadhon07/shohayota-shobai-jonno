@@ -15,6 +15,7 @@ import socialServiceImage from '@/assets/social-service.jpg';
 import meetingGathering from '@/assets/meeting-gathering.jpg';
 import teamPhoto from '@/assets/team-photo.jpg';
 
+import bloodDonationMain from '@/assets/blood-donation-main.jpg';
 import bloodDonation1 from '@/assets/blood-donation-1.jpg';
 import bloodDonation2 from '@/assets/blood-donation-2.jpg';
 import bloodDonation3 from '@/assets/blood-donation-3.jpg';
@@ -57,9 +58,10 @@ const activities = [
   {
     title: 'রক্তদান কার্যক্রম',
     description: 'জরুরি প্রয়োজনে রক্তদান করে আমরা মানুষের জীবন বাঁচাতে সাহায্য করি। আমাদের সদস্যরা নিয়মিত স্বেচ্ছায় রক্তদান করে থাকেন।',
-    image: bloodDonation1,
+    image: bloodDonationMain,
     stats: '৫০+ রক্তদান',
     gallery: [
+      { src: bloodDonationMain, caption: 'রক্তদান' },
       { src: bloodDonation1, caption: 'রক্তদান - ১' },
       { src: bloodDonation2, caption: 'রক্তদান - ২' },
       { src: bloodDonation3, caption: 'রক্তদান - ৩' },
