@@ -39,7 +39,7 @@ const ContactSection = () => {
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">ফোন</h3>
                   <p className="text-muted-foreground text-sm">
-                    ০১XXXXXXXXX
+                    ০১৩১৪৪১২৮৪৯
                   </p>
                 </div>
               </div>
