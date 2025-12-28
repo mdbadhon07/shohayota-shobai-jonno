@@ -2,6 +2,7 @@ import { User } from 'lucide-react';
 import presidentImage from '@/assets/president-al-amin-raju.jpg';
 import generalSecretaryImage from '@/assets/general-secretary-rakibul.jpg';
 import publicitySecretaryImage from '@/assets/publicity-secretary-momin.jpg';
+import treasurerImage from '@/assets/treasurer-hannan.jpg';
 
 const committeeMembers = [
   {
@@ -25,9 +26,9 @@ const committeeMembers = [
     image: null,
   },
   {
-    name: 'সদস্যের নাম',
+    name: 'মো: আব্দুল হান্নান',
     position: 'কোষাধ্যক্ষ',
-    image: null,
+    image: treasurerImage,
   },
   {
     name: 'মো: আব্দুল মমিন',
