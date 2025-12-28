@@ -1,35 +1,36 @@
 import { User } from 'lucide-react';
+import presidentImage from '@/assets/president-al-amin-raju.jpg';
 
 const committeeMembers = [
   {
-    name: 'সদস্যের নাম',
+    name: 'মো: আল আমিন রাজু',
     position: 'সভাপতি',
-    role: 'president',
+    image: presidentImage,
   },
   {
     name: 'সদস্যের নাম',
     position: 'সহ-সভাপতি',
-    role: 'vice-president',
+    image: null,
   },
   {
     name: 'সদস্যের নাম',
     position: 'সাধারণ সম্পাদক',
-    role: 'general-secretary',
+    image: null,
   },
   {
     name: 'সদস্যের নাম',
     position: 'সেক্রেটারি',
-    role: 'secretary',
+    image: null,
   },
   {
     name: 'সদস্যের নাম',
     position: 'কোষাধ্যক্ষ',
-    role: 'treasurer',
+    image: null,
   },
   {
     name: 'সদস্যের নাম',
     position: 'প্রচার সম্পাদক',
-    role: 'publicity-secretary',
+    image: null,
   },
 ];
 
@@ -53,8 +54,18 @@ const CommitteeSection = () => {
               key={index}
               className="bg-card p-6 rounded-xl shadow-soft card-hover text-center group"
             >
-              <div className="w-20 h-20 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                <User className="w-10 h-10 text-primary" />
+              <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
+                {member.image ? (
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-primary/10 flex items-center justify-center">
+                    <User className="w-10 h-10 text-primary" />
+                  </div>
+                )}
               </div>
               <h3 className="font-semibold text-foreground text-lg mb-1">
                 {member.name}
