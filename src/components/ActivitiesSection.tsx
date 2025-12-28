@@ -12,8 +12,11 @@ import foodPackage from '@/assets/food-package.jpg';
 import communityGathering from '@/assets/community-gathering.jpg';
 
 import socialServiceImage from '@/assets/social-service.jpg';
-import meetingGathering from '@/assets/meeting-gathering.jpg';
-import teamPhoto from '@/assets/team-photo.jpg';
+import socialService1 from '@/assets/social-service-1.jpg';
+import socialService2 from '@/assets/social-service-2.jpg';
+import socialService3 from '@/assets/social-service-3.jpg';
+import socialService4 from '@/assets/social-service-4.jpg';
+import socialService5 from '@/assets/social-service-5.jpg';
 
 import bloodDonationMain from '@/assets/blood-donation-main.jpg';
 import bloodDonation1 from '@/assets/blood-donation-1.jpg';
@@ -51,8 +54,11 @@ const activities = [
     stats: '২০+ সেবামূলক অভিযান',
     gallery: [
       { src: socialServiceImage, caption: 'পুকুর পরিষ্কার' },
-      { src: meetingGathering, caption: 'সভা ও আলোচনা' },
-      { src: teamPhoto, caption: 'আমাদের দল' },
+      { src: socialService1, caption: 'শরবত বিতরণ - ১' },
+      { src: socialService2, caption: 'শরবত বিতরণ - ২' },
+      { src: socialService3, caption: 'শরবত বিতরণ - ৩' },
+      { src: socialService4, caption: 'স্বেচ্ছাসেবক দল' },
+      { src: socialService5, caption: 'শরবত বিতরণ - ৪' },
     ],
   },
   {
