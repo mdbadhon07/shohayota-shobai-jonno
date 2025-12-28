@@ -1,28 +1,52 @@
-import clothesImage from '@/assets/clothes-distribution.jpg';
-import ramadanImage from '@/assets/ramadan-iftar.jpg';
-import communityImage from '@/assets/community-help.jpg';
-import heroImage from '@/assets/hero-volunteers.jpg';
+import teamPhoto from '@/assets/team-photo.jpg';
+import bookDistribution from '@/assets/book-distribution.jpg';
+import communityGathering from '@/assets/community-gathering.jpg';
+import foodPackage from '@/assets/food-package.jpg';
+import meetingGathering from '@/assets/meeting-gathering.jpg';
+import buyingBlankets from '@/assets/buying-blankets.jpg';
+import blanketDist1 from '@/assets/blanket-distribution-1.jpg';
+import blanketDist2 from '@/assets/blanket-distribution-2.jpg';
 
 const galleryImages = [
   {
-    src: heroImage,
-    alt: 'স্বেচ্ছাসেবী কাজ',
-    caption: 'গ্রামে কম্বল বিতরণ',
+    src: teamPhoto,
+    alt: 'নব জোয়ার তরুণ সংঘ টিম',
+    caption: 'আমাদের স্বেচ্ছাসেবক দল',
   },
   {
-    src: clothesImage,
+    src: communityGathering,
+    alt: 'ধর্মীয় সভা',
+    caption: 'কমিউনিটি সমাবেশ',
+  },
+  {
+    src: meetingGathering,
+    alt: 'মিটিং ও ইফতার',
+    caption: 'সদস্যদের সাথে মিটিং',
+  },
+  {
+    src: bookDistribution,
+    alt: 'বই বিতরণ',
+    caption: 'শিশুদের বই বিতরণ',
+  },
+  {
+    src: foodPackage,
+    alt: 'খাদ্য প্যাকেজ',
+    caption: 'খাদ্য সামগ্রী প্রস্তুতি',
+  },
+  {
+    src: buyingBlankets,
+    alt: 'কম্বল ক্রয়',
+    caption: 'শীতবস্ত্র সংগ্রহ',
+  },
+  {
+    src: blanketDist1,
+    alt: 'কম্বল বিতরণ',
+    caption: 'অসহায়দের পাশে',
+  },
+  {
+    src: blanketDist2,
     alt: 'শীতবস্ত্র বিতরণ',
-    caption: 'শীতার্ত শিশুদের পাশে',
-  },
-  {
-    src: ramadanImage,
-    alt: 'ইফতার বিতরণ',
-    caption: 'রমজানে ইফতার আয়োজন',
-  },
-  {
-    src: communityImage,
-    alt: 'সাহায্য কার্যক্রম',
-    caption: 'অসহায় পরিবারের পাশে',
+    caption: 'গ্রামে কম্বল বিতরণ',
   },
 ];
 
@@ -52,7 +76,7 @@ const GallerySection = () => {
                 src={image.src}
                 alt={image.alt}
                 className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
-                  index === 0 ? 'h-full min-h-[300px] md:min-h-[400px]' : 'h-48 md:h-56'
+                  index === 0 ? 'h-full min-h-[300px] md:min-h-[400px]' : 'h-40 md:h-48'
                 }`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
