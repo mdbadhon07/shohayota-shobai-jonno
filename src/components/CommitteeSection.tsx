@@ -1,4 +1,4 @@
-import { User } from 'lucide-react';
+import { User, Phone, Facebook } from 'lucide-react';
 import presidentImage from '@/assets/president-al-amin-raju.jpg';
 import generalSecretaryImage from '@/assets/general-secretary-rakibul.jpg';
 import publicitySecretaryImage from '@/assets/publicity-secretary-momin.jpg';
@@ -9,21 +9,29 @@ const committeeMembers = [
     name: 'মো: আল আমিন রাজু',
     position: 'সভাপতি',
     image: presidentImage,
+    phone: '01XXXXXXXXX',
+    facebook: 'https://facebook.com/',
   },
   {
     name: 'মো: রাকিবুল ইসলাম',
     position: 'সাধারণ সম্পাদক',
     image: generalSecretaryImage,
+    phone: '01XXXXXXXXX',
+    facebook: 'https://facebook.com/',
   },
   {
     name: 'মো: আব্দুল হান্নান',
     position: 'কোষাধ্যক্ষ',
     image: treasurerImage,
+    phone: '01XXXXXXXXX',
+    facebook: 'https://facebook.com/',
   },
   {
     name: 'মো: আব্দুল মমিন',
     position: 'প্রচার সম্পাদক',
     image: publicitySecretaryImage,
+    phone: '01XXXXXXXXX',
+    facebook: 'https://facebook.com/',
   },
 ];
 
@@ -41,7 +49,7 @@ const CommitteeSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {committeeMembers.map((member, index) => (
             <div
               key={index}
@@ -63,9 +71,27 @@ const CommitteeSection = () => {
               <h3 className="font-semibold text-foreground text-lg mb-1">
                 {member.name}
               </h3>
-              <p className="text-primary font-medium text-sm">
+              <p className="text-primary font-medium text-sm mb-3">
                 {member.position}
               </p>
+              <div className="flex justify-center gap-3">
+                <a
+                  href={`tel:${member.phone}`}
+                  className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                  title="ফোন করুন"
+                >
+                  <Phone className="w-4 h-4" />
+                </a>
+                <a
+                  href={member.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                  title="ফেসবুক"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           ))}
         </div>
