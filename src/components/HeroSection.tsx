@@ -22,7 +22,7 @@ const HeroSection = () => {
           </p>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6 animate-fade-up opacity-0 stagger-2 leading-tight">
-            মানুষ মানুষের জন্য
+            নব জোয়ার তরুণ সংঘ
           </h1>
           
           <p className="text-lg md:text-xl text-primary-foreground/90 mb-8 animate-fade-up opacity-0 stagger-3 max-w-2xl mx-auto">
