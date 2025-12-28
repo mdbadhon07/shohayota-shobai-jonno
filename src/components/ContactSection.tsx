@@ -1,6 +1,53 @@
 import { MapPin, Phone, Mail, Facebook, Clock } from 'lucide-react';
+import { useState } from 'react';
+import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/mdbadhon22449@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          phone: formData.get('phone'),
+          message: formData.get('message'),
+          _subject: 'নবযাত্রা সংঘ - নতুন মেসেজ',
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: "সফল!",
+          description: "আপনার বার্তা সফলভাবে পাঠানো হয়েছে।",
+        });
+        form.reset();
+      } else {
+        throw new Error('Failed to send');
+      }
+    } catch (error) {
+      toast({
+        title: "ত্রুটি",
+        description: "বার্তা পাঠাতে সমস্যা হয়েছে। পরে আবার চেষ্টা করুন।",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="section-padding bg-muted/30">
       <div className="container-narrow mx-auto">
@@ -79,7 +126,7 @@ const ContactSection = () => {
             <h3 className="text-xl font-semibold text-foreground mb-6">
               মেসেজ পাঠান
             </h3>
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   আপনার নাম
@@ -87,6 +134,8 @@ const ContactSection = () => {
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  required
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                   placeholder="আপনার নাম লিখুন"
                 />
@@ -99,6 +148,8 @@ const ContactSection = () => {
                 <input
                   type="tel"
                   id="phone"
+                  name="phone"
+                  required
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                   placeholder="০১XXXXXXXXX"
                 />
@@ -110,7 +161,9 @@ const ContactSection = () => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={4}
+                  required
                   className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
                   placeholder="আপনার বার্তা লিখুন..."
                 />
@@ -118,9 +171,10 @@ const ContactSection = () => {
               
               <button
                 type="submit"
-                className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 shadow-soft hover:shadow-card"
+                disabled={isSubmitting}
+                className="w-full py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 shadow-soft hover:shadow-card disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                বার্তা পাঠান
+                {isSubmitting ? 'পাঠানো হচ্ছে...' : 'বার্তা পাঠান'}
               </button>
             </form>
           </div>
