@@ -25,7 +25,7 @@ const ContactSection = () => {
                 <div>
                   <h3 className="font-semibold text-foreground mb-1">ঠিকানা</h3>
                   <p className="text-muted-foreground text-sm">
-                    গ্রাম/এলাকার নাম, উপজেলা, জেলা
+                    হাটরা গ্রাম, কেশরহাট পৌরসভা, মোহনপুর থানা, রাজশাহী জেলা
                   </p>
                 </div>
               </div>
