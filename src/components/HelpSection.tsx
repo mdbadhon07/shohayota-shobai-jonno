@@ -21,6 +21,7 @@ const helpOptions = [
     description: 'আপনার সময় ও শ্রম দিয়ে আমাদের পাশে থাকুন। মাঠপর্যায়ে কাজ করুন, অভিজ্ঞতা অর্জন করুন।',
     action: 'যোগ দিন',
     color: 'accent',
+    link: 'https://forms.gle/DyvV1iBK7brvKVSq9',
   },
 ];
 
@@ -64,26 +65,42 @@ const HelpSection = () => {
                   {option.description}
                 </p>
                 
-                <button
-                  onClick={() => {
-                    const donationSection = document.getElementById('donation-info');
-                    if (donationSection) {
-                      donationSection.scrollIntoView({ behavior: 'smooth' });
-                      donationSection.classList.add('ring-2', 'ring-primary', 'ring-offset-2');
-                      setTimeout(() => {
-                        donationSection.classList.remove('ring-2', 'ring-primary', 'ring-offset-2');
-                      }, 2000);
-                    }
-                  }}
-                  className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:gap-3 ${
-                    option.color === 'primary' ? 'bg-primary text-primary-foreground hover:bg-primary/90' :
-                    option.color === 'secondary' ? 'bg-secondary text-secondary-foreground hover:bg-secondary/90' :
-                    'bg-accent text-accent-foreground hover:bg-accent/90'
-                  }`}
-                >
-                  {option.action}
-                  <ArrowRight size={16} />
-                </button>
+                {option.link ? (
+                  <a
+                    href={option.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:gap-3 ${
+                      option.color === 'primary' ? 'bg-primary text-primary-foreground hover:bg-primary/90' :
+                      option.color === 'secondary' ? 'bg-secondary text-secondary-foreground hover:bg-secondary/90' :
+                      'bg-accent text-accent-foreground hover:bg-accent/90'
+                    }`}
+                  >
+                    {option.action}
+                    <ArrowRight size={16} />
+                  </a>
+                ) : (
+                  <button
+                    onClick={() => {
+                      const donationSection = document.getElementById('donation-info');
+                      if (donationSection) {
+                        donationSection.scrollIntoView({ behavior: 'smooth' });
+                        donationSection.classList.add('ring-2', 'ring-primary', 'ring-offset-2');
+                        setTimeout(() => {
+                          donationSection.classList.remove('ring-2', 'ring-primary', 'ring-offset-2');
+                        }, 2000);
+                      }
+                    }}
+                    className={`inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 group-hover:gap-3 ${
+                      option.color === 'primary' ? 'bg-primary text-primary-foreground hover:bg-primary/90' :
+                      option.color === 'secondary' ? 'bg-secondary text-secondary-foreground hover:bg-secondary/90' :
+                      'bg-accent text-accent-foreground hover:bg-accent/90'
+                    }`}
+                  >
+                    {option.action}
+                    <ArrowRight size={16} />
+                  </button>
+                )}
               </div>
             );
           })}
