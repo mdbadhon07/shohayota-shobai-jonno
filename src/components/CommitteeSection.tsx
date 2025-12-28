@@ -30,7 +30,7 @@ const committeeMembers = [
     name: 'মো: আব্দুল মমিন',
     position: 'প্রচার সম্পাদক',
     image: publicitySecretaryImage,
-    phone: '01XXXXXXXXX',
+    phone: '01708757095',
     facebook: 'https://www.facebook.com/share/1AaiR164Wm/',
   },
 ];
