@@ -8,6 +8,7 @@ const Navbar = () => {
   const navLinks = [
     { href: '#home', label: 'হোম' },
     { href: '#about', label: 'আমাদের সম্পর্কে' },
+    { href: '#full-committee', label: 'কমিটি' },
     { href: '#activities', label: 'আমাদের কার্যক্রম' },
     { href: '#help', label: 'সহযোগিতা করুন' },
     { href: '#transparency', label: 'স্বচ্ছতা' },
