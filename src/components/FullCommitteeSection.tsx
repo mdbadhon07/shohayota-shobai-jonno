@@ -57,30 +57,30 @@ const FullCommitteeSection = () => {
         </div>
 
         {/* Main Committee Members */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-4 mb-12">
           {committeeMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-card p-4 rounded-xl shadow-soft card-hover text-center group border border-border/50"
+              className="bg-card p-2 sm:p-4 rounded-lg sm:rounded-xl shadow-soft card-hover text-center group border border-border/50"
             >
-              <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden border-3 border-primary/20 group-hover:border-primary/40 transition-colors bg-primary/10 flex items-center justify-center">
-                <User className="w-8 h-8 text-primary" />
+              <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary/40 transition-colors bg-primary/10 flex items-center justify-center">
+                <User className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
               </div>
-              <h3 className="font-semibold text-foreground text-base mb-1">
+              <h3 className="font-semibold text-foreground text-xs sm:text-sm leading-tight mb-0.5">
                 {member.name}
               </h3>
-              <p className="text-primary font-medium text-sm mb-3">
+              <p className="text-primary font-medium text-[10px] sm:text-xs mb-2">
                 {member.position}
               </p>
               {(member.phone || member.facebook) && (
-                <div className="flex justify-center gap-2">
+                <div className="flex justify-center gap-1.5">
                   {member.phone && (
                     <a
                       href={`tel:${member.phone}`}
-                      className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                      className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                       title="ফোন করুন"
                     >
-                      <Phone className="w-3.5 h-3.5" />
+                      <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                     </a>
                   )}
                   {member.facebook && (
@@ -88,10 +88,10 @@ const FullCommitteeSection = () => {
                       href={member.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                      className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                       title="ফেসবুক"
                     >
-                      <Facebook className="w-3.5 h-3.5" />
+                      <Facebook className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                     </a>
                   )}
                 </div>
