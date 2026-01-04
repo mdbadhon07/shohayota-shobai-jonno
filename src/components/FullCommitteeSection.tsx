@@ -1,6 +1,21 @@
+import { useState } from 'react';
 import { Phone, Facebook, User } from 'lucide-react';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
-const committeeMembers = [
+interface CommitteeMember {
+  position: string;
+  name: string;
+  phone: string;
+  facebook: string;
+  image?: string;
+}
+
+const committeeMembers: CommitteeMember[] = [
   { position: 'সভাপতি', name: 'আব্দুল্লাহ আল-আমিন', phone: '', facebook: '' },
   { position: 'সহ-সভাপতি', name: 'মো: রিমন হোসেন', phone: '', facebook: '' },
   { position: 'সহ-সভাপতি', name: 'মো: হাবিবুর রহমান', phone: '', facebook: '' },
@@ -43,6 +58,8 @@ const advisors = [
 ];
 
 const FullCommitteeSection = () => {
+  const [selectedMember, setSelectedMember] = useState<CommitteeMember | null>(null);
+
   return (
     <section id="full-committee" className="section-padding bg-background">
       <div className="container-narrow mx-auto">
@@ -61,44 +78,85 @@ const FullCommitteeSection = () => {
           {committeeMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-card p-2 sm:p-4 rounded-lg sm:rounded-xl shadow-soft card-hover text-center group border border-border/50"
+              onClick={() => setSelectedMember(member)}
+              className="bg-card p-2 sm:p-4 rounded-lg sm:rounded-xl shadow-soft card-hover text-center group border border-border/50 cursor-pointer"
             >
               <div className="w-10 h-10 sm:w-14 sm:h-14 mx-auto mb-2 rounded-full overflow-hidden border-2 border-primary/20 group-hover:border-primary/40 transition-colors bg-primary/10 flex items-center justify-center">
-                <User className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+                {member.image ? (
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                ) : (
+                  <User className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
+                )}
               </div>
               <h3 className="font-semibold text-foreground text-xs sm:text-sm leading-tight mb-0.5">
                 {member.name}
               </h3>
-              <p className="text-primary font-medium text-[10px] sm:text-xs mb-2">
+              <p className="text-primary font-medium text-[10px] sm:text-xs">
                 {member.position}
               </p>
-              {(member.phone || member.facebook) && (
-                <div className="flex justify-center gap-1.5">
-                  {member.phone && (
-                    <a
-                      href={`tel:${member.phone}`}
-                      className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                      title="ফোন করুন"
-                    >
-                      <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                    </a>
-                  )}
-                  {member.facebook && (
-                    <a
-                      href={member.facebook}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                      title="ফেসবুক"
-                    >
-                      <Facebook className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                    </a>
-                  )}
-                </div>
-              )}
             </div>
           ))}
         </div>
+
+        {/* Member Detail Popup */}
+        <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle className="text-center">{selectedMember?.position}</DialogTitle>
+            </DialogHeader>
+            {selectedMember && (
+              <div className="flex flex-col items-center py-4">
+                <div className="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-primary/20 bg-primary/10 flex items-center justify-center">
+                  {selectedMember.image ? (
+                    <img src={selectedMember.image} alt={selectedMember.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <User className="w-12 h-12 text-primary" />
+                  )}
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-1">
+                  {selectedMember.name}
+                </h3>
+                <p className="text-primary font-medium mb-6">
+                  {selectedMember.position}
+                </p>
+                
+                <div className="flex flex-col gap-3 w-full max-w-xs">
+                  {selectedMember.phone ? (
+                    <a
+                      href={`tel:${selectedMember.phone}`}
+                      className="flex items-center gap-3 bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors px-4 py-3 rounded-lg"
+                    >
+                      <Phone className="w-5 h-5" />
+                      <span className="font-medium">{selectedMember.phone}</span>
+                    </a>
+                  ) : (
+                    <div className="flex items-center gap-3 bg-muted/50 px-4 py-3 rounded-lg text-muted-foreground">
+                      <Phone className="w-5 h-5" />
+                      <span>ফোন নম্বর যোগ করা হয়নি</span>
+                    </div>
+                  )}
+                  
+                  {selectedMember.facebook ? (
+                    <a
+                      href={selectedMember.facebook}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors px-4 py-3 rounded-lg"
+                    >
+                      <Facebook className="w-5 h-5" />
+                      <span className="font-medium">ফেসবুক প্রোফাইল</span>
+                    </a>
+                  ) : (
+                    <div className="flex items-center gap-3 bg-muted/50 px-4 py-3 rounded-lg text-muted-foreground">
+                      <Facebook className="w-5 h-5" />
+                      <span>ফেসবুক লিংক যোগ করা হয়নি</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
 
         {/* Executive Members */}
         <div className="mb-12">
