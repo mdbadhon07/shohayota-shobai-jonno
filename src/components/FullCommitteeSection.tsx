@@ -100,58 +100,77 @@ const FullCommitteeSection = () => {
 
         {/* Member Detail Popup */}
         <Dialog open={!!selectedMember} onOpenChange={() => setSelectedMember(null)}>
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="sm:max-w-md overflow-hidden">
             <DialogHeader>
-              <DialogTitle className="text-center">{selectedMember?.position}</DialogTitle>
+              <DialogTitle className="text-center animate-fade-in">{selectedMember?.position}</DialogTitle>
             </DialogHeader>
             {selectedMember && (
               <div className="flex flex-col items-center py-4">
-                <div className="w-24 h-24 mb-4 rounded-full overflow-hidden border-4 border-primary/20 bg-primary/10 flex items-center justify-center">
-                  {selectedMember.image ? (
-                    <img src={selectedMember.image} alt={selectedMember.name} className="w-full h-full object-cover" />
-                  ) : (
-                    <User className="w-12 h-12 text-primary" />
-                  )}
+                {/* Animated Profile Image */}
+                <div className="relative w-28 h-28 mb-4 animate-scale-in">
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/40 to-primary/10 animate-pulse" />
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/30 bg-primary/10 flex items-center justify-center shadow-lg transition-transform duration-300 hover:scale-105">
+                    {selectedMember.image ? (
+                      <img src={selectedMember.image} alt={selectedMember.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <User className="w-14 h-14 text-primary" />
+                    )}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-1">
+                
+                {/* Animated Name & Position */}
+                <h3 className="text-xl font-bold text-foreground mb-1 animate-fade-in" style={{ animationDelay: '0.1s' }}>
                   {selectedMember.name}
                 </h3>
-                <p className="text-primary font-medium mb-6">
+                <p className="text-primary font-medium mb-6 animate-fade-in" style={{ animationDelay: '0.15s' }}>
                   {selectedMember.position}
                 </p>
                 
+                {/* Animated Contact Buttons */}
                 <div className="flex flex-col gap-3 w-full max-w-xs">
-                  {selectedMember.phone ? (
-                    <a
-                      href={`tel:${selectedMember.phone}`}
-                      className="flex items-center gap-3 bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors px-4 py-3 rounded-lg"
-                    >
-                      <Phone className="w-5 h-5" />
-                      <span className="font-medium">{selectedMember.phone}</span>
-                    </a>
-                  ) : (
-                    <div className="flex items-center gap-3 bg-muted/50 px-4 py-3 rounded-lg text-muted-foreground">
-                      <Phone className="w-5 h-5" />
-                      <span>ফোন নম্বর যোগ করা হয়নি</span>
-                    </div>
-                  )}
+                  <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                    {selectedMember.phone ? (
+                      <a
+                        href={`tel:${selectedMember.phone}`}
+                        className="flex items-center gap-3 bg-gradient-to-r from-primary/10 to-primary/5 hover:from-primary hover:to-primary/90 hover:text-primary-foreground transition-all duration-300 px-4 py-3 rounded-xl group shadow-sm hover:shadow-md"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-primary/20 group-hover:bg-primary-foreground/20 flex items-center justify-center transition-colors">
+                          <Phone className="w-5 h-5" />
+                        </div>
+                        <span className="font-medium">{selectedMember.phone}</span>
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-3 bg-muted/50 px-4 py-3 rounded-xl text-muted-foreground">
+                        <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                          <Phone className="w-5 h-5" />
+                        </div>
+                        <span>ফোন নম্বর যোগ করা হয়নি</span>
+                      </div>
+                    )}
+                  </div>
                   
-                  {selectedMember.facebook ? (
-                    <a
-                      href={selectedMember.facebook}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 bg-primary/10 hover:bg-primary hover:text-primary-foreground transition-colors px-4 py-3 rounded-lg"
-                    >
-                      <Facebook className="w-5 h-5" />
-                      <span className="font-medium">ফেসবুক প্রোফাইল</span>
-                    </a>
-                  ) : (
-                    <div className="flex items-center gap-3 bg-muted/50 px-4 py-3 rounded-lg text-muted-foreground">
-                      <Facebook className="w-5 h-5" />
-                      <span>ফেসবুক লিংক যোগ করা হয়নি</span>
-                    </div>
-                  )}
+                  <div className="animate-fade-in" style={{ animationDelay: '0.25s' }}>
+                    {selectedMember.facebook ? (
+                      <a
+                        href={selectedMember.facebook}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 bg-gradient-to-r from-blue-500/10 to-blue-600/5 hover:from-blue-600 hover:to-blue-500 hover:text-white transition-all duration-300 px-4 py-3 rounded-xl group shadow-sm hover:shadow-md"
+                      >
+                        <div className="w-10 h-10 rounded-full bg-blue-500/20 group-hover:bg-white/20 flex items-center justify-center transition-colors">
+                          <Facebook className="w-5 h-5" />
+                        </div>
+                        <span className="font-medium">ফেসবুক প্রোফাইল</span>
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-3 bg-muted/50 px-4 py-3 rounded-xl text-muted-foreground">
+                        <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
+                          <Facebook className="w-5 h-5" />
+                        </div>
+                        <span>ফেসবুক লিংক যোগ করা হয়নি</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
