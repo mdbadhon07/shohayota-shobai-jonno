@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Phone, Facebook, User } from 'lucide-react';
 import presidentImage from '@/assets/president-abdullah.jpg';
+import treasurerImage from '@/assets/treasurer-hannan.jpg';
 import {
   Dialog,
   DialogContent,
@@ -24,7 +25,7 @@ const committeeMembers: CommitteeMember[] = [
   { position: 'যুগ্ম সাধারণ সম্পাদক', name: 'মো: কুরবান আলী', phone: '', facebook: '' },
   { position: 'সাংগঠনিক সম্পাদক', name: 'মো: শামীম আলী', phone: '', facebook: '' },
   { position: 'সহ-সাংগঠনিক সম্পাদক', name: 'মো: জুবায়ের আহমেদ', phone: '', facebook: '' },
-  { position: 'কোষাধ্যক্ষ', name: 'মো: আব্দুল হান্নান', phone: '', facebook: '' },
+  { position: 'কোষাধ্যক্ষ', name: 'মো: আব্দুল হান্নান', phone: '+880 1306-219560', facebook: 'https://www.facebook.com/share/1NRPKyw1u2/', image: treasurerImage },
   { position: 'প্রচার সম্পাদক', name: 'মো: আব্দুল মমিন', phone: '', facebook: '' },
   { position: 'সহ-প্রচার সম্পাদক', name: 'মো: হাসিবুর রহমান', phone: '', facebook: '' },
   { position: 'ক্রীড়া সম্পাদক', name: 'মো: মাসুদ রানা', phone: '', facebook: '' },
