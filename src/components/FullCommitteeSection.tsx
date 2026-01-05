@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Phone, Facebook, User } from 'lucide-react';
+import presidentImage from '@/assets/president-abdullah.jpg';
 import {
   Dialog,
   DialogContent,
@@ -16,7 +17,7 @@ interface CommitteeMember {
 }
 
 const committeeMembers: CommitteeMember[] = [
-  { position: 'সভাপতি', name: 'আব্দুল্লাহ আল-আমিন', phone: '', facebook: '' },
+  { position: 'সভাপতি', name: 'আব্দুল্লাহ আল-আমিন', phone: '', facebook: '', image: presidentImage },
   { position: 'সহ-সভাপতি', name: 'মো: রিমন হোসেন', phone: '', facebook: '' },
   { position: 'সহ-সভাপতি', name: 'মো: হাবিবুর রহমান', phone: '', facebook: '' },
   { position: 'সাধারণ সম্পাদক', name: 'মো: রাকিবুল ইসলাম', phone: '', facebook: '' },
