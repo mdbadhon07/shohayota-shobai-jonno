@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Phone, Facebook, User } from 'lucide-react';
 import presidentImage from '@/assets/president-abdullah.jpg';
 import treasurerImage from '@/assets/treasurer-hannan.jpg';
-import vicePresidentRimonImage from '@/assets/vice-president-rimon.jpg';
+import vicePresidentHabiburImage from '@/assets/vice-president-habibur.jpg';
 import {
   Dialog,
   DialogContent,
@@ -20,8 +20,8 @@ interface CommitteeMember {
 
 const committeeMembers: CommitteeMember[] = [
   { position: 'সভাপতি', name: 'আব্দুল্লাহ আল-আমিন', phone: '+880 1774-003680', facebook: 'https://www.facebook.com/share/1D7yRG7mHp/', image: presidentImage },
-  { position: 'সহ-সভাপতি', name: 'মো: রিমন হোসেন', phone: '+880 1759-266451', facebook: 'https://www.facebook.com/share/1GiBSP8uiW/', image: vicePresidentRimonImage },
-  { position: 'সহ-সভাপতি', name: 'মো: হাবিবুর রহমান', phone: '', facebook: '' },
+  { position: 'সহ-সভাপতি', name: 'মো: রিমন হোসেন', phone: '', facebook: '' },
+  { position: 'সহ-সভাপতি', name: 'মো: হাবিবুর রহমান', phone: '+880 1759-266451', facebook: 'https://www.facebook.com/share/1GiBSP8uiW/', image: vicePresidentHabiburImage },
   { position: 'সাধারণ সম্পাদক', name: 'মো: রাকিবুল ইসলাম', phone: '', facebook: '' },
   { position: 'যুগ্ম সাধারণ সম্পাদক', name: 'মো: কুরবান আলী', phone: '', facebook: '' },
   { position: 'সাংগঠনিক সম্পাদক', name: 'মো: শামীম আলী', phone: '', facebook: '' },
