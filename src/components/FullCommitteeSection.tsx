@@ -18,7 +18,7 @@ interface CommitteeMember {
 }
 
 const committeeMembers: CommitteeMember[] = [
-  { position: 'সভাপতি', name: 'আব্দুল্লাহ আল-আমিন', phone: '', facebook: '', image: presidentImage },
+  { position: 'সভাপতি', name: 'আব্দুল্লাহ আল-আমিন', phone: '+880 1774-003680', facebook: 'https://www.facebook.com/share/1D7yRG7mHp/', image: presidentImage },
   { position: 'সহ-সভাপতি', name: 'মো: রিমন হোসেন', phone: '', facebook: '' },
   { position: 'সহ-সভাপতি', name: 'মো: হাবিবুর রহমান', phone: '', facebook: '' },
   { position: 'সাধারণ সম্পাদক', name: 'মো: রাকিবুল ইসলাম', phone: '', facebook: '' },
